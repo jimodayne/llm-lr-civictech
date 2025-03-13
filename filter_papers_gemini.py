@@ -17,8 +17,8 @@ current_model = GEMI_2_0_FLASH_LITE;
 
 model = GenerativeModel(current_model)
 
-input_file_name = 'dataset_head_25.csv'
-output_file_name = 'dataset_head_25_2.0_lite_processed.csv'
+input_file_name = './input/dataset.csv'
+output_file_name = './output/dataset_2.0_lite_processed.csv'
 
 
 def generate_prompt(abstract):
