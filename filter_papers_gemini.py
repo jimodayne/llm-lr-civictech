@@ -13,12 +13,12 @@ vertexai.init(project=PROJECT_ID, location="us-central1")
 GEMI_2_0_FLASH_LITE = "gemini-2.0-flash-lite"
 GEMI_2_0_FLASH = "gemini-2.0-flash-001"
 
-current_model = GEMI_2_0_FLASH_LITE;
+current_model = GEMI_2_0_FLASH;
 
 model = GenerativeModel(current_model)
 
 input_file_name = './input/dataset.csv'
-output_file_name = './output/dataset_2.0_lite_processed.csv'
+output_file_name = './output/dataset_gemi_2.0_processed.csv'
 
 
 def generate_prompt(abstract):
@@ -57,8 +57,6 @@ async def main_process(df):
         
         # Result has the format: {score: 50, reason: ""}
         # Get the score from the result and the reason, and append to the results list (2 columns)
-        
-        print(result)
         
         clean_result = re.sub(r"^```json\s*|```$", "", result.strip(), flags=re.MULTILINE).strip()
         try:
